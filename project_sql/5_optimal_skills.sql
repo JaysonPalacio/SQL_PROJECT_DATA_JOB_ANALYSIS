@@ -44,3 +44,33 @@ and project management tools like Jira and Confluence.
 In summary, expertise in cloud computing, programming, data visualization, 
 and project management are crucial for success in data analysis roles.
 */
+WITH skill_data AS (
+    SELECT 8 AS skill_id, 'go' AS skills, 27 AS demand_count, 115320 AS avg_salary
+    UNION ALL SELECT 234, 'confluence', 11, 114210
+    UNION ALL SELECT 97, 'hadoop', 22, 113193
+    UNION ALL SELECT 80, 'snowflake', 37, 112948
+    UNION ALL SELECT 74, 'azure', 34, 111225
+    UNION ALL SELECT 77, 'bigquery', 13, 109654
+    UNION ALL SELECT 76, 'aws', 32, 108317
+    UNION ALL SELECT 4, 'java', 17, 106906
+    UNION ALL SELECT 194, 'ssis', 12, 106683
+    UNION ALL SELECT 233, 'jira', 20, 104918
+    UNION ALL SELECT 79, 'oracle', 37, 104534
+    UNION ALL SELECT 185, 'looker', 49, 103795
+    UNION ALL SELECT 2, 'nosql', 13, 101414
+    UNION ALL SELECT 1, 'python', 236, 101397
+    UNION ALL SELECT 5, 'r', 148, 100499
+    UNION ALL SELECT 78, 'redshift', 16, 99936
+    UNION ALL SELECT 187, 'qlik', 13, 99631
+    UNION ALL SELECT 182, 'tableau', 230, 99288
+    UNION ALL SELECT 197, 'ssrs', 14, 99171
+    UNION ALL SELECT 92, 'spark', 13, 99077
+    UNION ALL SELECT 13, 'c++', 11, 98958
+    UNION ALL SELECT 186, 'sas', 63, 98902
+    UNION ALL SELECT 7, 'sas', 63, 98902
+    UNION ALL SELECT 61, 'sql server', 35, 97786
+    UNION ALL SELECT 9, 'javascript', 20, 97587
+)
+SELECT skills, REPEAT('#', demand_count / 5) AS bar, demand_count
+FROM skill_data
+ORDER BY demand_count DESC;
